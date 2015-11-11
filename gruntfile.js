@@ -14,10 +14,29 @@ module.exports = function(grunt) {
                     "styles/css/styles.css" : "styles/css/styles.sass"
                 }
             }
+        },
+        browserSync: {
+            default_options: {
+                bsFiles: {
+                    src: [
+                        "styles/css/*.css",
+                        "*.html"
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: {
+                        baseDir: "./"
+                    }
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
+
+    grunt.registerTask('default', ['browserSync', 'watch'])
 
 };
