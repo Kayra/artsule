@@ -4,12 +4,35 @@
 /* ================================================== */
 /* #Basic Styles */
 /* ================================================== */
+body {
+  background-color: #B77AAB; }
+
 .top-layer {
   display: none; }
 
 /* #Typography */
 /* ================================================== */
-header h1 {
+h1 {
+  text-align: center;
+  color: #E6E6EA;
+  display: inline-block;
+  padding: 0 15px;
+  position: relative; }
+  h1:before, h1:after {
+    background: #ddd;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 400%; }
+  h1:before {
+    right: 100%; }
+  h1:after {
+    left: 100%; }
+
+header {
+  overflow: hidden;
   text-align: center; }
 
 /* #Links */

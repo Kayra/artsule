@@ -3,6 +3,9 @@
 /* #Colours */
 /* ================================================== */
 
+$darkpurple: #984C8A
+$lightpurple: #B77AAB
+$white: #E6E6EA
 
 /* #Media Query Breakpoints */
 /* ================================================== */
@@ -49,6 +52,9 @@ $screen-md-max:              ($screen-lg-min - 1)
 /* #Basic Styles */
 /* ================================================== */
 
+body
+    background-color: $lightpurple
+
 .top-layer
     display: none
 
@@ -56,8 +62,29 @@ $screen-md-max:              ($screen-lg-min - 1)
 /* #Typography */
 /* ================================================== */
 
-header h1
+h1
     text-align: center
+    color: $white
+    display: inline-block
+    padding: 0 15px
+    position: relative
+    &:before, &:after
+        background: #ddd
+        content: ""
+        display: block
+        height: 1px
+        position: absolute
+        top: 50%
+        width: 400%
+    &:before
+        right: 100%
+    &:after
+        left: 100%
+
+header
+    overflow: hidden
+    text-align: center
+
 
 /* #Links */
 /* ================================================== */
