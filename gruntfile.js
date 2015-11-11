@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 files: {
-                    "styles/css/styles.css" : "styles/css/styles.sass"
+                    "styles/css/styles.css" : "styles/sass/styles.sass"
                 }
             }
         },
