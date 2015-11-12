@@ -57,6 +57,8 @@ p {
 a {
   color: #E6E6EA;
   text-decoration: none; }
+  a:hover {
+    color: #E6E6EA; }
 
 /* #Images */
 /* ================================================== */
