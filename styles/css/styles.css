@@ -45,7 +45,7 @@ header {
 footer a {
   font-size: 1.3em; }
 
-p {
+p, a {
   color: #E6E6EA;
   text-align: center;
   font-size: 1.3em;
