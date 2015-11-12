@@ -7,6 +7,11 @@
 body {
   background-color: #B77AAB; }
 
+footer {
+  display: block;
+  text-align: center;
+  padding: 1em 0 1.5em 0; }
+
 .top-layer {
   display: none; }
 
@@ -36,8 +41,15 @@ header {
   text-align: center;
   margin-bottom: 10px; }
 
+footer a {
+  font-size: 1.3em; }
+
 /* #Links */
 /* ================================================== */
+a {
+  color: #E6E6EA;
+  text-decoration: none; }
+
 /* #Images */
 /* ================================================== */
 img {
