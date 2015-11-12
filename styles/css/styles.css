@@ -48,7 +48,9 @@ footer a {
 p {
   color: #E6E6EA;
   text-align: center;
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  font-weight: 300; }
 
 /* #Links */
 /* ================================================== */
@@ -86,7 +88,7 @@ a {
     clear: both; }
 
   p {
-    display: block; } }
+    letter-spacing: 0.15em; } }
 /* Medium devices (desktops, 992px and up) */
 
 /*# sourceMappingURL=styles.css.map */
