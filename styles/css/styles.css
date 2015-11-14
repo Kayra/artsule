@@ -78,7 +78,6 @@ a {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .desktop-top-layer, .desktop-bottom-layer {
-    display: block;
     width: 100%;
     margin-top: 2em; }
     .desktop-top-layer img, .desktop-bottom-layer img {
