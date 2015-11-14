@@ -12,10 +12,10 @@ footer {
   text-align: center;
   padding: 1em 0 1.5em 0; }
 
-.desktop-top-layer, .desktop-bottom-layer {
+.desktop-top-section, .desktop-bottom-section {
   display: none; }
 
-.mobile-layer {
+.mobile-section {
   display: none; }
 
 /* #Typography */
@@ -67,7 +67,7 @@ a {
 
 /* #Images */
 /* ================================================== */
-.mobile-layer img {
+.mobile-section img {
   width: 100%;
   margin: 9px 0; }
 
@@ -77,12 +77,12 @@ a {
 /* ================================================== */
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .desktop-top-layer, .desktop-bottom-layer {
+  .desktop-top-section, .desktop-bottom-section {
     width: 100%;
     margin-top: 2em; }
-    .desktop-top-layer img, .desktop-bottom-layer img {
+    .desktop-top-section img, .desktop-bottom-section img {
       width: 100%; }
-    .desktop-top-layer .col-sm-2, .desktop-bottom-layer .col-sm-2 {
+    .desktop-top-section .col-sm-2, .desktop-bottom-section .col-sm-2 {
       padding: 0 0.2em;
       width: 20%; }
 
