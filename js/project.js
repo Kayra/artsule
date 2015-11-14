@@ -5,6 +5,10 @@
         return screen.width < mobileBreakpoint ? true : false;
     }
 
+    function isBottomLayer(sectionName) {
+        return sectionName.indexOf("bottom") > -1
+    }
+
     function getSection(className) {
         return document.getElementsByClassName(className)[0];
     }
@@ -13,19 +17,19 @@
         return section.getElementsByTagName("a");
     }
 
-    function injectImages(links, desktop) {
+    function injectImages(links, desktop, bottomLayer) {
 
         desktop = desktop || false;
 
-        var i = !desktop ? 0 : 6;
+        bottomLayer = bottomLayer || false;
+
+        var offset = !bottomLayer ? 1 : 5;
 
         var address = desktop ? "resources/images/long_image" : "resources/images/square_image";
 
-        for (i; i < links.length; i++){
-            console.log(i);
-            console.log(links);
+        for (var i = 0; i < links.length; i++){
             var img = links[i].getElementsByTagName("img")[0];
-            img.src = address + (i + 1) + ".png";
+            img.src = address + (i + offset) + ".png";
         }
 
     }
@@ -44,24 +48,20 @@
 
     function loadDesktopImages() {
 
-        var topLayer = document.getElementsByClassName("desktop-top-section")[0];
-        var bottomLayer = document.getElementsByClassName("desktop-bottom-section")[0];
+        var sections = ["desktop-top-section", "desktop-bottom-section"];
 
-        var topLinks = topLayer.getElementsByTagName("a");
-        var bottomLinks = bottomLayer.getElementsByTagName("a");
+        for (var i = 0; i < sections.length; i++) {
 
-        for (var i = 0; i < topLinks.length; i++){
-            var img = topLinks[i].getElementsByTagName("img")[0];
-            img.src = "resources/images/long_image" + (i + 1) + ".png";
+            var section = getSection(sections[i]);
+
+            var links = getLinks(section);
+
+            isBottomLayer(section.className) ? injectImages(links, true, true) : injectImages(links, true);
+
+            section.style.display = "block";
+
         }
 
-        for (var i = 0; i < bottomLinks.length; i++){
-            var img = bottomLinks[i].getElementsByTagName("img")[0];
-            img.src = "resources/images/long_image" + (i + 6) + ".png";
-        }
-
-        topLayer.style.display = "block"
-        bottomLayer.style.display = "block"
     }
 
     if (isMobile()) {
