@@ -17,6 +17,10 @@
         return section.getElementsByTagName("a");
     }
 
+    function getImageElement(element) {
+        return element.getElementsByTagName("img")[0];
+    }
+
     function injectImages(links, desktop, bottomLayer) {
 
         var desktop = desktop || false;
@@ -28,7 +32,7 @@
         var address = desktop ? "resources/images/long_image" : "resources/images/square_image";
 
         for (var i = 0; i < links.length; i++){
-            var img = links[i].getElementsByTagName("img")[0];
+            var img = getImageElement(links[i]);
             img.src = address + (i + offset) + ".png";
         }
 
