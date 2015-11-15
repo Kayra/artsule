@@ -19,9 +19,9 @@
 
     function injectImages(links, desktop, bottomLayer) {
 
-        desktop = desktop || false;
+        var desktop = desktop || false;
 
-        bottomLayer = bottomLayer || false;
+        var bottomLayer = bottomLayer || false;
 
         var offset = !bottomLayer ? 1 : 5;
 
