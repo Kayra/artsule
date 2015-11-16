@@ -2,7 +2,7 @@
 
     function isMobile() {
         var mobileBreakpoint = 768;
-        return screen.width < mobileBreakpoint ? true : false;
+        return screen.width < mobileBreakpoint;
     }
 
     function loadImages(customAttribute) {
