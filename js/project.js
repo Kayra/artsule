@@ -5,8 +5,8 @@
         return screen.width < mobileBreakpoint ? true : false;
     }
 
-    function isBottomLayer(sectionName) {
-        return sectionName.indexOf("bottom") > -1
+    function isBottomLayer(path) {
+        return path.indexOf("bottom") > -1
     }
 
     function getSection(className) {
@@ -21,32 +21,68 @@
         return element.getElementsByTagName("img")[0];
     }
 
-    function injectImages(links, desktop, bottomLayer) {
+    function getImageElements(section) {
+        return section.getElementsByTagName("img");
+    }
 
-        var desktop = desktop || false;
+    function generateImages(imageElements, path) {
 
-        var bottomLayer = bottomLayer || false;
+        var images = [];
 
-        var offset = !bottomLayer ? 1 : 5;
+        var offset = isBottomLayer(path) ? 5 : 1;
 
-        var address = desktop ? "resources/images/long_image" : "resources/images/square_image";
+        for (var i = 0; i < imageElements.length; i++) {
 
-        for (var i = 0; i < links.length; i++){
-            var img = getImageElement(links[i]);
-            img.src = address + (i + offset) + ".png";
+            var image = imageElements[i];
+
+            images.push(path + (i + offset) + ".png");
+
         }
+
+        return images;
+
+    }
+
+    function injectImages(links, images) {
+
+        for (var i = 0; i < links.length; i++) {
+            var image = getImageElement(links[i]);
+            image.src = images[i];
+        }
+
+    }
+
+    function injectMobileImages(links, imageElements) {
+
+        var path = "resources/images/square_image";
+
+        var images = generateImages(imageElements, path);
+
+        injectImages(links, images)
+
+    }
+
+    function injectDesktopImages(links, imageElements) {
+
+        var path = "resources/images/long_image";
+
+        var images = generateImages(imageElements, path);
+
+        injectImages(links, images);
 
     }
 
     function loadMobileImages() {
 
-        var mobileSection = getSection("mobile-section")
+        var section = getSection("mobile-section")
 
-        var links = getLinks(mobileSection);
+        var links = getLinks(section);
 
-        injectImages(links);
+        var imageElements = getImageElements(section);
 
-        mobileSection.style.display = "block";
+        injectMobileImages(links, imageElements);
+
+        section.style.display = "block";
 
     }
 
@@ -60,7 +96,9 @@
 
             var links = getLinks(section);
 
-            isBottomLayer(section.className) ? injectImages(links, true, true) : injectImages(links, true);
+            var imageElements = getImageElements(section);
+
+            injectDesktopImages(links, imageElements);
 
             section.style.display = "block";
 
