@@ -15,9 +15,6 @@ footer {
 .desktop-top-section, .desktop-bottom-section {
   display: none; }
 
-.mobile-section {
-  display: none; }
-
 /* #Typography */
 /* ================================================== */
 h1 {
@@ -78,6 +75,7 @@ a {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .desktop-top-section, .desktop-bottom-section {
+    display: block;
     width: 100%;
     margin-top: 2em; }
     .desktop-top-section img, .desktop-bottom-section img {
@@ -85,6 +83,9 @@ a {
     .desktop-top-section .col-sm-2, .desktop-bottom-section .col-sm-2 {
       padding: 0 0.2em;
       width: 20%; }
+
+  .mobile-section {
+    display: none; }
 
   header {
     display: block;
