@@ -5,30 +5,20 @@
         return screen.width < mobileBreakpoint ? true : false;
     }
 
-    function loadMobileImages() {
+    function loadImages(customAttribute) {
 
-        var elements = document.querySelectorAll('[mobile-src]');
+        var elements = document.querySelectorAll('[' + customAttribute + ']');
 
         for (var i = 0; i < elements.length; i++) {
-            elements[i].src = elements[i].getAttribute('mobile-src');
+            elements[i].src = elements[i].getAttribute(customAttribute);
         }
 
     }
 
-    function loadDesktopImages() {
-
-            var elements = document.querySelectorAll('[desktop-src]');
-
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].src = elements[i].getAttribute('desktop-src');
-            }
-
-    }
-
     if (isMobile()) {
-        loadMobileImages();
+        loadImages('mobile-src');
     } else {
-        loadDesktopImages();
+        loadImages('desktop-src');
     }
 
 }());
