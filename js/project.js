@@ -2,7 +2,8 @@
 
     function isMobile() {
         var mobileBreakpoint = 768;
-        return screen.width < mobileBreakpoint;
+        console.log(window.innerWidth);
+        return window.innerWidth < mobileBreakpoint;
     }
 
     function loadImages(customAttribute) {
@@ -29,11 +30,21 @@
         }, 200);
     }
 
-    if (isMobile()) {
-        loadImages('mobile-src');
-    } else {
-        loadImages('desktop-src');
-        loadAnimation();
+    function loadImagesForBreakpoints() {
+
+        if (isMobile()) {
+            loadImages('mobile-src');
+        } else {
+            loadImages('desktop-src');
+            loadAnimation();
+        }
+
     }
+
+    window.addEventListener('resize', function() {
+        loadImagesForBreakpoints();
+    })
+
+    loadImagesForBreakpoints();
 
 }());
