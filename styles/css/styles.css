@@ -68,6 +68,13 @@ a {
   width: 100%;
   margin: 9px 0; }
 
+.desktop-top-section img, .desktop-bottom-section img {
+  opacity: 0;
+  transition: opacity 2s; }
+
+.imageAnimation {
+  opacity: 1 !important; }
+
 /* #Lists */
 /* ================================================== */
 /* #Media Queries */
