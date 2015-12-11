@@ -27,7 +27,7 @@
             if (i === images.length) {
                 clearInterval(interval);
             }
-        }, 200);
+        }, 100);
     }
 
     function loadImagesForBreakpoints() {
