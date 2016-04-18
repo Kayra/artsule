@@ -2,7 +2,6 @@
 
     function isMobile() {
         var mobileBreakpoint = 768;
-        console.log(window.innerWidth);
         return window.innerWidth < mobileBreakpoint;
     }
 
