@@ -1,48 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="desktop-top-section">
-  <div class="col-sm-2"><a href="resources/images/big_image1.png" data-lightbox="lightbox" data-title="Blue Hydrangea"><img desktop-src="resources/images/long_image1.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image2.png" data-lightbox="lightbox" data-title="Attention Seeking"><img desktop-src="resources/images/long_image2.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image3.png" data-lightbox="lightbox" data-title="Dreaming in Colour"><img desktop-src="resources/images/long_image3.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image4.png" data-lightbox="lightbox" data-title="Rainbow"><img desktop-src="resources/images/long_image4.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image5.png" data-lightbox="lightbox" data-title="Spring"><img desktop-src="resources/images/long_image5.png"></a></div>
-</section>
 
-<header>
-  <h1><span>ŞULE<span></h1>
-</header>
+    <section class="desktop-top-section">
+        {% for artwork in artwork_list|slice:"5" %}
+            <div class="col-sm-2">
+                <a href="{{artwork.largeImage}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
+                    <img desktop-src="{{artwork.desktopImage}}">
+                </a>
+            </div>
+        {% endfor %}
+    </section>
 
-<p>Inspired by the likes of Matisse, Monet and Pissarro, Şule expresses her view of the world by presenting just a hint of tangible substance, allowing your imagination to fill in the gaps. The art is as much yours as it is hers.</p>
+    <header>
+      <h1><span>ŞULE<span></h1>
+    </header>
 
-<section class="desktop-bottom-section">
-  <div class="col-sm-2"><a href="resources/images/big_image6.png" data-lightbox="lightbox" data-title="Life Under the Ocean"><img desktop-src="resources/images/long_image6.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image7.png" data-lightbox="lightbox" data-title="Signature"><img desktop-src="resources/images/long_image7.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image8.png" data-lightbox="lightbox" data-title="Leaves or Feathers"><img desktop-src="resources/images/long_image8.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image9.png" data-lightbox="lightbox" data-title="Opposite Sides"><img desktop-src="resources/images/long_image9.png"></a></div>
-  <div class="col-sm-2"><a href="resources/images/big_image10.png" data-lightbox="lightbox" data-title="Cosmos"><img desktop-src="resources/images/long_image10.png"></a></div>
-</section>
+    <p>Inspired by the likes of Matisse, Monet and Pissarro, Şule expresses her view of the world by presenting just a hint of tangible substance, allowing your imagination to fill in the gaps. The art is as much yours as it is hers.</p>
 
-<section class="mobile-section">
-  <a href="resources/images/big_image1.png"><img mobile-src="resources/images/square_image1.png"></a>
-  <a href="resources/images/big_image2.png"><img mobile-src="resources/images/square_image2.png"></a>
-  <a href="resources/images/big_image3.png"><img mobile-src="resources/images/square_image3.png"></a>
-  <a href="resources/images/big_image4.png"><img mobile-src="resources/images/square_image4.png"></a>
-  <a href="resources/images/big_image5.png"><img mobile-src="resources/images/square_image5.png"></a>
-  <a href="resources/images/big_image6.png"><img mobile-src="resources/images/square_image6.png"></a>
-  <a href="resources/images/big_image7.png"><img mobile-src="resources/images/square_image7.png"></a>
-  <a href="resources/images/big_image8.png"><img mobile-src="resources/images/square_image8.png"></a>
-  <a href="resources/images/big_image9.png"><img mobile-src="resources/images/square_image9.png"></a>
-  <a href="resources/images/big_image10.png"><img mobile-src="resources/images/square_image10.png"></a>
-</section>
+    <section class="desktop-bottom-section">
+        {% for artwork in artwork_list|slice:"5:10" %}
+            <div class="col-sm-2">
+                <a href="{{artwork.largeImage}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
+                    <img desktop-src="{{artwork.desktopImage}}">
+                </a>
+            </div>
+        {% endfor %}
+    </section>
 
-<footer>
-  <ul class="list-unstyled list-inline">
-  <li><a href="http://www.saatchiart.com/sulealat" target="_blank">Saatchi</a></li>
-    <li><a href="https://twitter.com/SuleAlatArt" target="_blank">Twitter</a></li>
-    <li><a href="https://www.facebook.com/sulealatart" target="_blank">Facebook</a></li>
-    <li><a href="mailto:sulealat@gmail.com">Email Şule</a></li>
-  </ul>
-</footer>
+    <section class="mobile-section">
+        {% for artwork in artwork_list|slice:":10" %}
+            <a href="{{artwork.largeImage}}">
+                <img mobile-src="{{artwork.mobileImage}}">
+            </a>
+        {% endfor %}
+    </section>
+
+    <footer>
+      <ul class="list-unstyled list-inline">
+      <li><a href="http://www.saatchiart.com/sulealat" target="_blank">Saatchi</a></li>
+        <li><a href="https://twitter.com/SuleAlatArt" target="_blank">Twitter</a></li>
+        <li><a href="https://www.facebook.com/sulealatart" target="_blank">Facebook</a></li>
+        <li><a href="mailto:sulealat@gmail.com">Email Şule</a></li>
+      </ul>
+    </footer>
 
 {% endblock %}
