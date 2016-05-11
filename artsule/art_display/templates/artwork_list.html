@@ -5,8 +5,8 @@
     <section class="desktop-top-section">
         {% for artwork in artwork_list|slice:"5" %}
             <div class="col-sm-2">
-                <a href="{{artwork.largeImage}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
-                    <img desktop-src="{{artwork.desktopImage}}">
+                <a href="{{artwork.largeImage.url}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
+                    <img desktop-src="{{artwork.desktopImage.url}}">
                 </a>
             </div>
         {% endfor %}
@@ -21,8 +21,8 @@
     <section class="desktop-bottom-section">
         {% for artwork in artwork_list|slice:"5:10" %}
             <div class="col-sm-2">
-                <a href="{{artwork.largeImage}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
-                    <img desktop-src="{{artwork.desktopImage}}">
+                <a href="{{artwork.largeImage.url}}" data-lightbox="lightbox" data-title="{{artwork.name}}">
+                    <img desktop-src="{{artwork.desktopImage.url}}">
                 </a>
             </div>
         {% endfor %}
@@ -30,8 +30,8 @@
 
     <section class="mobile-section">
         {% for artwork in artwork_list|slice:":10" %}
-            <a href="{{artwork.largeImage}}">
-                <img mobile-src="{{artwork.mobileImage}}">
+            <a href="{{artwork.largeImage.url}}">
+                <img mobile-src="{{artwork.mobileImage.url}}">
             </a>
         {% endfor %}
     </section>

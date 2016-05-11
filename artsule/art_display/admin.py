@@ -1,3 +1,4 @@
 from django.contrib import admin
+from art_display.models import ArtWork
 
-# Register your models here.
+admin.register(ArtWork)(admin.ModelAdmin)
